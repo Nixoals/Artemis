@@ -1,0 +1,9 @@
+gTTS==2.2.4
+nltk==3.7
+numpy==1.22.4
+phue==1.1
+playsound==1.2.2
+pytz==2022.1
+spacy==3.3.1
+tensorflow==2.9.1
+vosk==0.3.42

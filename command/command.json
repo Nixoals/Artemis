@@ -1,0 +1,44 @@
+{
+  "lightControl": {
+    "mode normal": {
+      "set_light": "True",
+      "group_name": ["cuisine", "salon"],
+      "scene_name": "normal"
+    },
+    "allume les lumières": {
+      "set_light": "True",
+      "group_name": ["cuisine", "salon"],
+      "scene_name": "normal"
+    },
+    "éteins les lumières": {
+      "set_light": "False",
+      "group_name": ["cuisine", "salon"]
+    },
+    "mode dodo": {
+      "set_light": "True",
+      "group_name": ["cuisine", "salon"],
+      "scene_name": "Coucher sur la savane"
+    },
+    "éteins toutes les lumières": {
+      "set_light": "False",
+      "group_name": ["cuisine", "salon", "bureau"]
+    },
+    "éteins la cuisine": {
+      "set_light": "False",
+      "group_name": ["cuisine"]
+    },
+    "allume la cuisine": {
+      "set_light": "True",
+      "group_name": ["cuisine"],
+      "scene_name": "normal"
+    },
+    "éteins le salon": {
+      "set_light": "False",
+      "group_name": ["salon"]
+    },
+    "éteins mon bureau": {
+      "set_light": "False",
+      "group_name": ["bureau"]
+    }
+  }
+}
