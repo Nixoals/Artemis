@@ -36,7 +36,7 @@ def signal_handler(sig, frame):
 signal.signal(signal.SIGINT, signal_handler)
 
 def help():
-    print('python classify.py <path_to_model.eim> <audio_device_ID, optional>' )
+    print('python artemis_app.py <path_to_model.eim> <audio_device_ID, optional>' )
 
 def main(argv):
     try:
@@ -77,7 +77,7 @@ def main(argv):
 
                     restart=False
                     for label in labels:
-                        #Change ['okartemis'] to your own classification name that you've set in edge-impusle
+                        #Change ['okartemis'] to your own classification label that you've set in edge-impusle
                         score = res['result']['classification']['okartemis']
                         
                         

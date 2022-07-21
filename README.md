@@ -10,6 +10,7 @@ Un environnement virtuel (avec pyenv par ex) sera plus sûr pour ce petit projet
 ## Hardware:
 
 - Raspberry Pi (RPi 4 8G de préférence)
+- Carte SD avec Bulleyes 64 bit pré-installé (aarch64)
 - Un microphone usb (type dongle peux faire l'affaire)
 - Ventilateur 5v 
 - Haut parleur usb
@@ -25,7 +26,7 @@ npm config set user root && sudo npm install edge-impulse-linux -g --unsafe-perm
 
 Initialiser edge-impulse-linux avec ses identifiants
 
-`edge-impulse-linux --disable-camera`
+`edge-impulse-linux --disable-camera` # l'argument disable-camera est nécessaire puisque seul "keyword spoting" est utilisé
 
 installer les dépendances manquantes
 
@@ -37,7 +38,7 @@ Telecharger le modèle
 
 `edge-impulse-linux-runner --download modelfile.eim`
 
-## Installation des dépendances
+## Dépendances
 
 
 ### installation de Vosk (speech to text):
@@ -48,8 +49,9 @@ Afin de faire fonctionner Vosk il est nécessaire de télécharger le modèle fr
 Un model plus lourd sera plus efficace mais aussi beaucoup plus long à charger à chaque lancement du script artemis_app.py.
 
 ### Installer Spacy:
-Ce package permet de faire de l'analyse sémantique et il est relativement poussé et complexe :astonished:. Nous l'utiliserons ici uniquement comme lemmatizer, car nltk ne prend pas en charge le français.
-Spacy fonctionne uniquement sur la version 64 bit du raspberry pi.
+Ce package permet de faire de l'analyse sémantique et il est relativement poussé et complexe. Nous l'utiliserons ici uniquement comme lemmatizer, car nltk ne prend pas en charge le français.
+
+:warning: Spacy fonctionne uniquement sur la version 64 bit du raspberry pi. :warning:
 
 `pip install spacy`
 
@@ -64,13 +66,20 @@ Une procédure plutot facile à suivre [ici](https://qengineering.eu/install-ten
 ### Controller les lumières: exemple avec philips Hue:
 le package phue 1.1 permet de se connecter au pont philips hue afin de récuprer les infos (scenes, groupes, zones etc ...)
 
+la doc est bien faite et est disponible [ici](https://github.com/studioimaginaire/phue)
+
 `pip install phue`
 
 Il est ensuite nécessaire de modifier le fichier /command/command.json afin d'y ajouter les commandes souhaitées et les actions qui correspondent à vos propres zones/groupes/scenes etc...
 
+### gTTS (google text to speech)
+
+Un package ne nécessitant pas de faire appel à une api tierce aurait été préférable, mais la plupart des synthétizeur vocaux (ex : pyttsx3) ressemble malheureusement à des larynx électroniques de très mauvaise qualité.
+
 ### intents:
 Artemis peut aussi être considérer comme un chatbot. Je me suis basé sur plusieurs tutoriels (comme [ici](https://www.youtube.com/watch?v=1lwddP0KUEg), ou encore [ici](https://towardsdatascience.com/how-to-create-a-chatbot-with-python-deep-learning-in-less-than-an-hour-56a063bdfc44)).
 Le fichier intents.json (ArtemisAi/response_artemis) contient les différentes questions/reponses qu'Artemis est capable de gérer. On peut ajouter autant d'objets qu'on le souhaite, mais il est impératif d'entrainer le model après toutes modifications.
+
 `python training.py`
 
 ## :rocket: Lancer Artemis :rocket:
