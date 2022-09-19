@@ -3,7 +3,7 @@
 # **Artemis**: petit assistant vocal en français
 
 Cette application est un exemple d'assistant vocal qui peut être embarqué sur un Raspberry Pi 4. 
-Etant donné l'utilisation de Tensorflow est Spacy et les incompatibilités notables sur bulleyes 32 bit et python 3.9 cela fonctionne uniquement sous linux **aarch64**
+Etant donné l'utilisation de Tensorflow et Spacy et les incompatibilités notables sur bulleyes 32 bit et python 3.9 cela fonctionne uniquement sous linux **aarch64**
 
 Un environnement virtuel (avec pyenv par ex) sera plus sûr pour ce petit projet :wink:.  
 
@@ -11,7 +11,7 @@ Un environnement virtuel (avec pyenv par ex) sera plus sûr pour ce petit projet
 
 - Raspberry Pi (RPi 4 8G de préférence)
 - Carte SD avec Bulleyes 64 bit pré-installé (aarch64)
-- Un microphone usb (type dongle peux faire l'affaire)
+- Un microphone usb (type dongle peu faire l'affaire)
 - Ventilateur 5v 
 - Haut parleur usb
 
